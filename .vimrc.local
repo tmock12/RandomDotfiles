@@ -1,0 +1,77 @@
+set number
+set relativenumber
+syntax on
+
+" =====================================
+"  Dracula colorscheme
+" =====================================
+" let g:dracula_italic = 0
+colorscheme dracula
+highlight Normal ctermbg=None
+let g:dracula_italic = 1
+
+" =====================================
+"  FZF
+" =====================================
+let $FZF_DEFAULT_COMMAND = 'ag -g ""'
+
+nnoremap <C-p> :Files<CR>
+nnoremap <C-g>g :Ag<CR>
+
+" =====================================
+"  UltiSnips
+" =====================================
+let g:UltiSnipsExpandTrigger               = '<C-l>'
+let g:UltiSnipsJumpForwardTrigger          = '<tab>'
+
+" =====================================
+"  Netrw
+" =====================================
+let g:netrw_liststyle=3
+
+" =====================================
+"  Custom Styles
+" =====================================
+hi Comment gui=italic cterm=italic
+hi htmlArg gui=italic cterm=italic
+
+
+" =====================================
+"  Emmet Settings
+" =====================================
+let g:user_emmet_settings = {
+\  'javascript.jsx' : {
+\      'extends' : 'jsx',
+\  },
+\}
+
+" =====================================
+"  COC
+" =====================================
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~ '\s'
+endfunction
+
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
+augroup CocConfig
+  autocmd!
+  " coc-highlight: enable highlighting for symbol under cursor
+  autocmd CursorHold * silent call CocActionAsync('highlight')
+augroup END
+
+" =====================================
+"  2 spaces 4 lyfe
+" =====================================
+filetype plugin indent on
+set expandtab
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2

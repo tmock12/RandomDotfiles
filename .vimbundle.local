@@ -1,0 +1,28 @@
+" Elixir plugin
+Plug 'slashmili/alchemist.vim'
+
+" Colorscheme
+Plug 'dracula/vim', { 'as': 'dracula' }
+
+" FuzzyFinder:
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+
+" Status bar/tabline
+Plug 'vim-airline/vim-airline'
+
+" Snippet helpers
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+Plug 'epilande/vim-react-snippets', { 'for': ['javascript', 'javascript.jsx'] }
+Plug 'mattn/emmet-vim'
+
+" Ember highlighting and helpers
+Plug 'AndrewRadev/ember_tools.vim'
+Plug 'mustache/vim-mustache-handlebars'
+
+" Elm Plugin
+Plug 'elmcast/elm-vim'
+
+" COC
+Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
