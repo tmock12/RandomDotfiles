@@ -1,0 +1,21 @@
+{
+  "codeLens.enable": true,
+  "languageserver": {
+    "elixirLS": {
+      "command": "/Users/wisebat/hashrocket/elixir-ls/rel/language_server.sh",
+      "filetypes": ["elixir", "eelixir"]
+    },
+    "efm": {
+      "command": "efm-langserver",
+      "args": [],
+      "filetypes": ["vim", "eruby", "markdown"]
+    },
+    "ember-language-server": {
+      "module": "/usr/local/lib/node_modules/@emberwatch/ember-language-server/lib/start-server.js",
+      "args": ["stdio"],
+      "filetypes": ["html.handlebars", "javascript", "javascript.jsx"],
+      "rootPatterns": [".ember-cli"],
+      "requireRootPattern": true
+    }
+  }
+}
