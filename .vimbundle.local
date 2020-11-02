@@ -25,4 +25,4 @@ Plug 'mustache/vim-mustache-handlebars'
 Plug 'elmcast/elm-vim'
 
 " COC
-Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
