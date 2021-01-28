@@ -61,11 +61,21 @@ inoremap <silent><expr> <TAB>
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
+" Faster updates for eslint messages
+set updatetime=300
+
 augroup CocConfig
   autocmd!
   " coc-highlight: enable highlighting for symbol under cursor
   autocmd CursorHold * silent call CocActionAsync('highlight')
 augroup END
+
+if has('nvim-0.4.3') || has('patch-8.2.0750')
+  nnoremap <nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
+  nnoremap <nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
+  inoremap <nowait><expr> <C-f> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
+  inoremap <nowait><expr> <C-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
+endif
 
 " =====================================
 "  2 spaces 4 lyfe
@@ -75,3 +85,14 @@ set expandtab
 set tabstop=2
 set softtabstop=2
 set shiftwidth=2
+
+" =====================================
+"  Airline (status tab)
+" =====================================
+let g:airline#extensions#branch#displayed_head_limit = 10
+
+
+nnoremap <down> :m .+1<CR>==
+nnoremap <up> :m .-2<CR>==
+vnoremap <down> :m '>+1<CR>gv=gv
+vnoremap <up> :m '<-2<CR>gv=gv

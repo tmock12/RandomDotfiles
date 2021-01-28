@@ -1,5 +1,20 @@
 {
   "codeLens.enable": true,
+  "list.nextKeymap": "<C-n>",
+  "list.previousKeymap": "<C-p>",
+  "coc.preferences.formatOnSaveFiletypes": [
+    "elixir",
+    "eelixir",
+    "css",
+    "Markdown",
+    "json",
+    "javascriptreact",
+    "ruby",
+    "typescript",
+    "typescript.tsx",
+    "html",
+    "scss"
+  ],
   "languageserver": {
     "efm": {
       "command": "efm-langserver",

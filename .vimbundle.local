@@ -26,3 +26,9 @@ Plug 'elmcast/elm-vim'
 
 " COC
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+" For GBrowse command
+Plug 'tpope/vim-rhubarb'
+
+" Markdown Preview
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
