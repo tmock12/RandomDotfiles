@@ -1,0 +1,28 @@
+# For tapping the sky
+# export PATH="/usr/local/opt/gnupg@1.4/libexec/gpgbin:$PATH"
+# export PATH="/usr/local/opt/mysql@5.5/bin:$PATH"
+
+# Vim is NEOVIM
+alias vim=nvim
+export VISUAL=nvim
+export EDITOR="$VISUAL"
+
+# Use oh-my-zsh
+export ZSH="/Users/wisebat/.oh-my-zsh"
+ZSH_THEME="dracula"
+plugins=(asdf)
+source $ZSH/oh-my-zsh.sh
+
+# Enable history in IEX
+export ERL_AFLAGS="-kernel shell_history enabled"
+
+# To remap h commands:
+# export SOURCE_DIR="$HOME/Repos"
+
+# Git helpers
+alias gclean="git branch --merged origin/master | grep -v master | xargs git branch -d"
+
+# FZF
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+eval "$(/Users/wisebat/dotmatrix/hr/bin/hr init -)"
