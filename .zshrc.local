@@ -24,5 +24,8 @@ alias gclean="git branch --merged origin/master | grep -v master | xargs git bra
 
 # FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# eval "$(/Users/taylormock/dotmatrix/hr/bin/hr init -)"
 
 eval "$(/Users/wisebat/dotmatrix/hr/bin/hr init -)"
+
+export PSQL_EDITOR="/usr/local/bin/nvim"
