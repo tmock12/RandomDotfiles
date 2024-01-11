@@ -101,3 +101,24 @@ vnoremap <up> :m '<-2<CR>gv=gv
 "  Tslime (sending selection to tmux)
 " =====================================
 vmap <C-c><C-c> <Plug>SendSelectionToTmux
+
+" =====================================
+"  Elixir helpers
+" =====================================
+iabbrev iins IO.inspect(, label: String.duplicate("🚨", 20))<Esc>34hi
+
+
+lua << EOF
+require("nvim-treesitter.configs").setup(
+    {
+        ensure_installed = {
+            "eex",
+            "elixir",
+            "erlang",
+            "heex",
+            "html",
+            "surface"
+        },
+        highlight = {enable = true},
+    })
+EOF
