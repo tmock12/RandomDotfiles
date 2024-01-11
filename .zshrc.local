@@ -1,31 +1,42 @@
-# For tapping the sky
-# export PATH="/usr/local/opt/gnupg@1.4/libexec/gpgbin:$PATH"
-# export PATH="/usr/local/opt/mysql@5.5/bin:$PATH"
+eval "$(/Users/tmock/dotmatrix/hr/bin/hr init -)"
 
 # Vim is NEOVIM
 alias vim=nvim
 export VISUAL=nvim
 export EDITOR="$VISUAL"
 
-# Use oh-my-zsh
-export ZSH="/Users/wisebat/.oh-my-zsh"
+# To remap h commands:
+export SOURCE_DIR="$HOME/Repos"
+
+# Source asdf
+. $HOME/.asdf/asdf.sh
+
+# direnv configuration for .envrc
+eval "$(direnv hook zsh)"
+
+# Dracula theme
 ZSH_THEME="dracula"
-plugins=(asdf)
-source $ZSH/oh-my-zsh.sh
 
 # Enable history in IEX
 export ERL_AFLAGS="-kernel shell_history enabled"
 
-# To remap h commands:
-# export SOURCE_DIR="$HOME/Repos"
+# Run migrations up and down
+twiki () {
+  mix ecto.migrate && mix ecto.rollback && mix ecto.migrate
+}
+
+# Phoenix Specific
+alias groutes='mix phx.routes | grep $@'
+alias pry='iex -S $@ --trace'
+
+# Ctags brew alias
+alias ctags="`brew --prefix`/bin/ctags"
+
+# FZF for ctrl r
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Git helpers
 alias gclean="git branch --merged origin/master | grep -v master | xargs git branch -d"
 
-# FZF
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-# eval "$(/Users/taylormock/dotmatrix/hr/bin/hr init -)"
-
-eval "$(/Users/wisebat/dotmatrix/hr/bin/hr init -)"
-
-export PSQL_EDITOR="/usr/local/bin/nvim"
+# Use neovim for psql
+export PSQL_EDITOR="/opt/homebrew/bin/nvim"
