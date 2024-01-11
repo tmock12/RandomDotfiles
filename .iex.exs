@@ -1,5 +1,3 @@
-# IEx.configure colors: [enabled: true]
-# IEx.configure colors: [ eval_result: [ :cyan, :bright ] ]
 Application.put_env(:elixir, :ansi_enabled, true)
 
 IEx.configure(
@@ -10,8 +8,6 @@ IEx.configure(
   ],
   default_prompt:
     [
-      # ANSI CHA, move cursor to column 1
-      "\e[G",
       :white,
       "I",
       :red,
@@ -38,4 +34,4 @@ IEx.configure(
     |> IO.chardata_to_string()
 )
 
-brek = fn -> inspect('#iex:break') end
+brek = fn -> inspect(~c"#iex:break") end
