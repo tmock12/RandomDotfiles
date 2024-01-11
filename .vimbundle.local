@@ -1,5 +1,7 @@
 " Elixir plugin
-Plug 'slashmili/alchemist.vim'
+" Plug 'slashmili/alchemist.vim'
+Plug 'elixir-editors/vim-elixir'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 " Colorscheme
 Plug 'dracula/vim', { 'as': 'dracula' }
@@ -12,14 +14,13 @@ Plug 'junegunn/fzf.vim'
 Plug 'vim-airline/vim-airline'
 
 " Snippet helpers
-Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'epilande/vim-react-snippets', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'mattn/emmet-vim'
 
 " Ember highlighting and helpers
-Plug 'AndrewRadev/ember_tools.vim'
-Plug 'mustache/vim-mustache-handlebars'
+" Plug 'AndrewRadev/ember_tools.vim'
+" Plug 'mustache/vim-mustache-handlebars'
 
 " Elm Plugin
 Plug 'elmcast/elm-vim'
@@ -32,3 +33,6 @@ Plug 'tpope/vim-rhubarb'
 
 " Markdown Preview
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+
+" CoPilot
+Plug 'github/copilot.vim'
